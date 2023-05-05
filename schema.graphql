@@ -1,0 +1,22 @@
+type Author {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  posts(findTitle: String): [Post]
+}
+ 
+type Post {
+  id: Int!
+  title: String!
+  author: Author
+}
+ 
+type Query {
+  posts: [Post]
+}
+
+# https://www.apollographql.com/docs/apollo-server/data/subscriptions/
+type Subscription {
+  hello: String!
+  postCreated: Post
+}
